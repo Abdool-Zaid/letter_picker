@@ -23,15 +23,25 @@ export default {
       this.rem = cur.length + 1;
     },
     next_game() {
-      
-      if(confirm('are you sure you want to restart ')){
+      if(this.letter_available){
 
-        cur = selection.split("");
-        this.rem = cur.length;
-        this.output = "";
-        this.letter_available = true;
+        if(confirm('are you sure you want to restart ')){
+          this.restart()
+        
+        }else{
+          return
+        }
+      }else{
+       
+          this.restart()
       }
     },
+    restart(){
+      cur = selection.split("");
+          this.rem = cur.length;
+          this.output = "";
+          this.letter_available = true;
+    }
   },
 };
 const selection = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
