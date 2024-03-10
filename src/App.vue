@@ -23,11 +23,14 @@ export default {
       this.rem = cur.length + 1;
     },
     next_game() {
-      cur = selection.split("");
-      this.rem = cur.length;
-      this.output = "";
-      this.letter_available = true;
-      alert("Started again");
+      
+      if(confirm('are you sure you want to restart ')){
+
+        cur = selection.split("");
+        this.rem = cur.length;
+        this.output = "";
+        this.letter_available = true;
+      }
     },
   },
 };
